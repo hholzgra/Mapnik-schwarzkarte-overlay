@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE Map [
+<!ENTITY datasource-settings SYSTEM "inc/datasource-settings.xml.inc">
+]>
+
+<Map srs="+init=epsg:3857" bgcolor="transparent">
+
+<Style name="building">
+  <Rule>
+    <PolygonSymbolizer fill="black"/>
+  </Rule>
+</Style>
+
+<Layer name="building" status="on"  srs="+init=epsg:3857">
+  <StyleName>building</StyleName>
+  <Datasource>
+    <Parameter name="table">
+      (SELECT way, building
+         FROM planet_osm_polygon
+        WHERE building IS NOT NULL
+          AND building != 'no'
+      ) AS way
+    </Parameter>
+    <Parameter name="geometry_field">way</Parameter>
+    &datasource-settings;
+  </Datasource>
+</Layer>
+
+</Map>
