@@ -3,7 +3,7 @@
 <!ENTITY datasource-settings SYSTEM "inc/datasource-settings.xml.inc">
 ]>
 
-<Map srs="+init=epsg:3857" bgcolor="transparent">
+<Map srs="+init=epsg:3857" background-color="transparent">
 
 <Style name="building">
   <Rule>
