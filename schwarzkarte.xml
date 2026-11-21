@@ -3,7 +3,7 @@
 <!ENTITY datasource-settings SYSTEM "inc/datasource-settings.xml.inc">
 ]>
 
-<Map srs="+init=epsg:3857" background-color="transparent">
+<Map srs="epsg:3857">
 
 <Style name="building">
   <Rule>
@@ -11,7 +11,7 @@
   </Rule>
 </Style>
 
-<Layer name="building" status="on"  srs="+init=epsg:3857">
+<Layer name="building" status="on"  srs="epsg:3857">
   <StyleName>building</StyleName>
   <Datasource>
     <Parameter name="table">
